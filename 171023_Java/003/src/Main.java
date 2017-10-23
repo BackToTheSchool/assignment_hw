@@ -20,6 +20,6 @@ public class Main {
         quotes = scan.nextLine();
         System.out.print("Who said it? ");
         name = scan.nextLine();
-        System.out.println(name+" says, "+ quotes + ".");
+        System.out.println(name+" says, \""+ quotes + ".\"");
     }
 }
