@@ -24,7 +24,7 @@ public class Main {
 
         int i, c;
         String tmp;
-        String str1, str2;
+        char[] str1[20], str2[20];
         str1 = strA;			// 여기서 인수를 str1,2로 하고 받게 되면
         str2 = strB;			// 문자열 주소값에 직접 들어가서 수정하므로 복사를 해서 다른 변수를 수정하게 한다.
 
@@ -35,7 +35,7 @@ public class Main {
             for (i = 0; i < str1.length()-1; i++) {	// 문자열 길이만큼 하면 \0도 비교해버리므로 문자열 길이 -1만큼 반복
                 if ((str1.substring(i,i+1).compareTo(str1.substring(i+1,i+2)) > 0)) {	// i, i+1번째 문자를 비교해서  i번째가 크면
                     tmp = str1.substring(i,i+1);				// i번째와 i+1번째의 문자 위치를 바꾼다
-                    str1.substring(i + 1,i+2) = str1.substring(i,i+1);
+                    str1.charAt(i+1) = str1.charAt(i);
                     str1[i] = tmp;
                 }
                 else
@@ -44,11 +44,11 @@ public class Main {
         }
 
         c = 0;
-        while (c != strlen(str2)-1) {
+        while (c != str2.length()-1) {
             c = 0;
-            for (i = 0; i < strlen(str2)-1; i++) {
-                if (str2[i] - str2[i + 1] > 0) {
-                    tmp = str2[i + 1];
+            for (i = 0; i < str2.length()-1; i++) {
+                if (str2.charAt(i) - str2.charAt(i+1) > 0) {
+                    tmp = str2.substring(i);
                     str2[i + 1] = str2[i];
                     str2[i] = tmp;
                 }
