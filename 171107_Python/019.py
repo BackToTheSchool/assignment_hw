@@ -12,7 +12,7 @@
 
 weight = int(input("Weight: "))
 height = int(input("Height: "))
-bmi = weight/(height**2)*703
+bmi = weight / (height ** 2) * 703
 
 print("Your BMI is %.1f" % bmi)
 
