@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Account</title>
+</head>
+<body>
+    <h1>거래 할 계좌를 고르고 비밀번호를 입력하세요.</h1>
+    <form method="POST" action="send_money.html">
+        계좌 <select>
+            <option value="1001">1001</option>
+            <option value="1002">1002</option>
+            <option value="1003">1003</option>
+            <option value="1004">1004</option>
+        </select><br>
+        비밀번호 <input type="password" name="password">
+        <input type="hidden" name="type" value="check">
+        <button type="submit">로그인</button>
+    </form>
+</body>
+</html>
