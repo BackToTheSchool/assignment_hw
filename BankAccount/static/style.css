@@ -2,3 +2,22 @@
     background-color: royalblue;
     color: white;
 }
+
+.list-group-item-action:focus{
+    background-color: royalblue;
+    color: white;
+}
+
+.big-error{
+    font-size: 5em;
+    font-weight: bold;
+}
+
+.main-logo{
+    height: 70px;
+    width: 70px;
+}
+
+.logo-box{
+    display: inline-block;
+}

@@ -10,15 +10,19 @@
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-    <h1>송금</h1>
+<div class="container">
+    <br><h1>송금</h1><br>
     <form method="POST" action="send_money_result.html">
-        계좌번호 : 1001<br>
-        잔고 : \10,000<br>
-        수신 계좌 번호 :
-        <input name="subject account"><br>
-        송금 금액 :
-        <input name="amount">
-        <button type="submit">출금</button>
+        <table class="table table-striped">
+            <tr> <td>계좌번호</td> <td>1001</td> </tr>
+            <tr> <td>잔고</td> <td>\10,000</td> </tr>
+            <tr> <td><label class="form-group" for="subject_account">수신 계좌 번호</label></td>
+                <td><input class="form-control" type="text" id="subject_account"></td> </tr>
+            <tr> <td><label class="form-group" for="amount">거래 금액</label></td>
+                <td><input class="form-control" type="text" id="amount"></td> </tr>
+        </table>
+        <button class="btn btn-primary btn-block" type="submit">출금</button>
     </form>
+</div>
 </body>
 </html>
