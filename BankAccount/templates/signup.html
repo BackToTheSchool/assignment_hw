@@ -12,18 +12,19 @@
 <body>
 <div class="container">
         <br><h1>회원가입</h1><br>
-        <form class="form-horizontal" method="POST" action="signup_result.html">
-            <label for="Name">이름: </label>
-            <input type="text" class="form-control" id="Name">
+        <form class="form-horizontal" method="POST" action="/signup_result/">
+            {% csrf_token %}
+            <label for="name">이름: </label>
+            <input type="text" class="form-control" id="name">
             <br>
-            <label for="UserId">ID: </label>
-            <input type="text" class="form-control" id="UserId">
+            <label for="user_id">ID: </label>
+            <input type="text" class="form-control" id="user_id">
             <br>
-            <label for="Password">비밀번호: </label>
-            <input type="password" class="form-control" id="Password">
+            <label for="password">비밀번호: </label>
+            <input type="password" class="form-control" id="password">
             <br>
-            <label for="DateOfBirth">생년월일: </label>
-            <input type="date" class="form-control" id="DateOfBirth" placeholder="YYYY-MM-DD">
+            <label for="date_of_birth">생년월일: </label>
+            <input type="date" class="form-control" id="date_of_birth">
             <br>
             <button type="submit" class="btn btn-primary">회원가입</button>
         </form>
