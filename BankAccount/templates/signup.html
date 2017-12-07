@@ -15,16 +15,16 @@
         <form class="form-horizontal" method="POST" action="/signup_result/">
             {% csrf_token %}
             <label for="name">이름: </label>
-            <input type="text" class="form-control" id="name">
+            <input type="text" class="form-control" id="name" name="name">
             <br>
             <label for="user_id">ID: </label>
-            <input type="text" class="form-control" id="user_id">
+            <input type="text" class="form-control" id="user_id" name="user_id">
             <br>
             <label for="password">비밀번호: </label>
-            <input type="password" class="form-control" id="password">
+            <input type="password" class="form-control" id="password" name="password">
             <br>
             <label for="date_of_birth">생년월일: </label>
-            <input type="date" class="form-control" id="date_of_birth">
+            <input type="date" class="form-control" id="date_of_birth" name="date_of_birth">
             <br>
             <button type="submit" class="btn btn-primary">회원가입</button>
         </form>
