@@ -20,7 +20,19 @@ from ATM import views
 
 urlpatterns = {
     url(r'^admin/', admin.site.urls),
-    url(r'^hello/', views.hello),
     url(r'^signup/', views.signup),
-    url(r'^signup_result/', views.signup_data)
+    url(r'^signup_result/', views.signup_data),
+    url(r'^main/', views.main_page),
+    url(r'^login/', views.login_page),
+    url(r'^select_action', views.select_action_page),
+    url(r'^create_acc/', views.create_acc_page),
+    url(r'^dep_or_with/', views.dep_or_with_page),
+    url(r'^select_account/', views.select_account_page),
+    url(r'^check_account/', views.check_account_page),
+    url(r'^create_acc_result/', views.create_acc_result_page),
+    url(r'^dep_or_with_result/', views.dep_or_with_result_page),
+    url(r'^error/', views.error_page),
+    url(r'^send_money/', views.send_money_page),
+    url(r'^send_money_result/', views.send_money_result_page),
+
 }

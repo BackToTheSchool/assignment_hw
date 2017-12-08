@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +9,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 </head>
 <body>
 <div class="container" align="center"><br>
-    <img class="main-logo" src="../static/PhireRedLogo.png"> <h1 class="">HW은행</h1>
+    <img class="main-logo" src="{% static "PhireRedLogo.png" %}"> <h1>HW은행</h1>
     <br>
         <div class="list-group" align="center">
-            <a href="signup.html" class="list-group-item list-group-item-action">회원가입</a>
-            <a href="login.html" class="list-group-item list-group-item-action">조회 및 거래</a>
+            <a href="/signup/" class="list-group-item list-group-item-action">회원가입</a>
+            <a href="/login/" class="list-group-item list-group-item-action">조회 및 거래</a>
         </div>
 </div>
 </body>
