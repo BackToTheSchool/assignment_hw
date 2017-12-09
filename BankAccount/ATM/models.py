@@ -2,27 +2,23 @@ from django import forms
 from django.db import models
 
 # Create your models here.
-from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response
 
 
-class ContactForm(forms.Form):
-    subject = forms.CharField(max_length=100)
-    message = forms.CharField()
-    sender = forms.EmailField()
-    cc_myself = forms.BooleanField(required=False)
+class Account(models.Model):
+    account_number = models.CharField(max_length=10, primary_key=True)
+    password = models.CharField(max_length=20)
+    balance = models.IntegerField()
+    user_id = models.CharField(max_length=30, editable=False)
+
+    def __str__(self):
+        return self.account_number
 
 
-def contact(request):
-    if request.method == 'POST': # 폼이 제출되었을 경우...
-        form = ContactForm(request.POST) # 폼은 POST 데이터에 바인드됨
-        if form.is_valid(): # 모든 유효성 검증 규칙을 통과
-            # form.cleaned_data에 있는 데이터를 처리
-            # ...
-            return HttpResponseRedirect('/thanks/') # Redirect after POST
-    else:
-        form = ContactForm() # An unbound form
+class Customer(models.Model):
+    name = models.CharField(max_length=30)
+    user_id = models.CharField(max_length=30, primary_key=True, null=False, default='user_id')
+    password = models.CharField(max_length=30)
+    date_of_birth = models.DateField()
 
-    return render_to_response('contact.html', {
-        'form': form,
-    })
+    def __str__(self):
+        return self.user_id

@@ -18,11 +18,12 @@ from django.contrib import admin
 
 from ATM import views
 
-urlpatterns = {
+urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^signup/', views.signup),
     url(r'^signup_result/', views.signup_data),
     url(r'^main/', views.main_page),
+    url(r'^$', views.main_page),
     url(r'^login/', views.login_page),
     url(r'^select_action', views.select_action_page),
     url(r'^create_acc/', views.create_acc_page),
@@ -35,4 +36,4 @@ urlpatterns = {
     url(r'^send_money/', views.send_money_page),
     url(r'^send_money_result/', views.send_money_result_page),
 
-}
+]
