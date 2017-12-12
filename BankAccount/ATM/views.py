@@ -1,8 +1,11 @@
 from django.http import HttpResponse
-
 # Create your views here.
 from django.template.loader import render_to_string
 from django.views.decorators.csrf import csrf_exempt
+
+from ATM.models import Customer
+
+cust = Customer()
 
 
 @csrf_exempt
@@ -13,12 +16,18 @@ def signup_data(request):
         uid = request.POST.get('user_id')
         pwd = request.POST.get('password')
         dob = request.POST.get('date_of_birth')
-        dict1 = {'name': name,
+        dict1 = {'name': name,                  # 데이터를 딕셔너리에 대입
                  'user_id': uid,
                  'password': pwd,
                  'date_of_birth': dob}
 
-    html = render_to_string('signup_result.html', dict1)
+        cust.name = name
+        cust.user_id = uid
+        cust.password = pwd
+        cust.date_of_birth = dob
+        cust.save()
+
+    html = render_to_string('signup_result.html', dict1)    # 다음 페이지로 전달
     return HttpResponse(html)
 
 
