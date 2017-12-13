@@ -2,6 +2,7 @@ from django.http import HttpResponse
 # Create your views here.
 from django.template.loader import render_to_string
 from django.views.decorators.csrf import csrf_exempt
+from django.db.models import Manager
 
 from ATM.models import Customer
 
@@ -16,23 +17,24 @@ def signup_data(request):
         uid = request.POST.get('user_id')
         pwd = request.POST.get('password')
         dob = request.POST.get('date_of_birth')
-        dict1 = {'name': name,                  # 데이터를 딕셔너리에 대입
+        dict1 = {'name': name,  # 데이터를 딕셔너리에 대입
                  'user_id': uid,
                  'password': pwd,
                  'date_of_birth': dob}
 
+        # cust 객체의 멤버 변수들에게 입력받은 각각의 데이터들 할당
         cust.name = name
         cust.user_id = uid
         cust.password = pwd
         cust.date_of_birth = dob
-        cust.save()
+        cust.save()  # 입력받은 값들을 저장 -> 이거 안하면 db에 저장 안 됨***
 
-    html = render_to_string('signup_result.html', dict1)    # 다음 페이지로 전달
+    html = render_to_string('signup_result.html', dict1)  # 다음 페이지로 전달
     return HttpResponse(html)
 
 
 @csrf_exempt
-def signup(request):
+def signup_page(request):
     return HttpResponse(render_to_string('signup.html'))
 
 
@@ -43,6 +45,18 @@ def main_page(request):
 @csrf_exempt
 def login_page(request):
     return HttpResponse(render_to_string('login.html'))
+
+
+@csrf_exempt
+def login_action(request):
+    if request.method == 'POST':
+        uid_input = request.POST.get('UserId')
+        pwd_input = request.POST.get('Password')
+        uid = Customer.objects.filter(user_id=uid_input)
+        pwd = Customer.objects.filter(password=pwd_input)
+        return HttpResponse(pwd)
+    else:
+        return main_page
 
 
 @csrf_exempt

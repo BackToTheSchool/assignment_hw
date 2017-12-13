@@ -1,6 +1,7 @@
 from django import forms
 from django.db import models
 
+
 # Create your models here.
 
 
@@ -9,6 +10,7 @@ class Account(models.Model):
     password = models.CharField(max_length=20)
     balance = models.IntegerField(default=0)
     user_id = models.CharField(max_length=30, editable=False)
+    objects = models.Manager()
 
     def __str__(self):
         return self.account_number
@@ -20,6 +22,7 @@ class Customer(models.Model):
     user_id = models.CharField(max_length=30)
     password = models.CharField(max_length=30)
     date_of_birth = models.DateField()
+    objects = models.Manager()
 
     def __str__(self):
         return self.user_id

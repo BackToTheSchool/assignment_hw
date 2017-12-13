@@ -20,11 +20,12 @@ from ATM import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^signup/', views.signup),
+    url(r'^signup/', views.signup_page),
     url(r'^signup_result/', views.signup_data),
     url(r'^main/', views.main_page),
     url(r'^$', views.main_page),
     url(r'^login/', views.login_page),
+    url(r'^login_action/', views.login_action),
     url(r'^select_action', views.select_action_page),
     url(r'^create_acc/', views.create_acc_page),
     url(r'^dep_or_with/', views.dep_or_with_page),
