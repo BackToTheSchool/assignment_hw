@@ -26,3 +26,6 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.user_id
+
+    def get_password(self):
+        return self.password

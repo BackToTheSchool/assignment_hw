@@ -7,6 +7,7 @@ from django.db.models import Manager
 from ATM.models import Customer
 
 cust = Customer()
+curr_usr = 'curr_usr'
 
 
 @csrf_exempt
@@ -48,15 +49,17 @@ def login_page(request):
 
 
 @csrf_exempt
-def login_action(request):
+def select_action_page(request):
+    dict1 = {}
     if request.method == 'POST':
         uid_input = request.POST.get('UserId')
         pwd_input = request.POST.get('Password')
-        uid = Customer.objects.filter(user_id=uid_input)
-        pwd = Customer.objects.filter(password=pwd_input)
-        return HttpResponse(pwd)
+        global curr_usr
+        curr_usr = Customer(user_id=uid_input, password=pwd_input)      # 조건과 일치하는 데이터 추가
+        dict1['curr_usr'] = curr_usr                                    # 딕셔너리에 추가
+        return HttpResponse(render_to_string('select_action.html', dict1))
     else:
-        return main_page
+        return login_page
 
 
 @csrf_exempt
@@ -103,7 +106,3 @@ def send_money_page(request):
 def send_money_result_page(request):
     return HttpResponse(render_to_string('send_money_result.html'))
 
-
-@csrf_exempt
-def select_action_page(request):
-    return HttpResponse(render_to_string('select_action.html'))
