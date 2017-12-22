@@ -14,11 +14,11 @@
 <div class="container">
     <br><h1>송금 결과</h1><br>
     <table class="table table-striped">
-        <tr> <td>계좌 번호</td> <td>1001</td> </tr>
-        <tr> <td>거래 금액</td> <td>\10,000</td> </tr>
-        <tr> <td>수신 계좌</td> <td>1002</td> </tr>
-        <tr> <td>거래 수수료</td> <td>\500</td> </tr>
-        <tr> <td>거래 후 잔고</td> <td>\20,000</td> </tr>
+        <tr> <td>계좌 번호</td> <td>{{ acc_number }}</td> </tr>
+        <tr> <td>거래 금액</td> <td>￦{{ amount }}</td> </tr>
+        <tr> <td>수신 계좌</td> <td>{{ obj_account }}</td> </tr>
+        <tr> <td>거래 수수료</td> <td>￦{{ commission }}</td> </tr>
+        <tr> <td>거래 후 잔고</td> <td>￦{{ balance }}</td> </tr>
     </table>
     <a class="btn btn-primary btn-block" href="/select_action/">거래 선택으로</a>
 </div>

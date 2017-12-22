@@ -18,11 +18,11 @@
             <tr> <td>계좌번호</td> <td>{{ acc_number }}</td> </tr>
             <tr> <td>잔고</td> <td>￦{{ balance }}</td> </tr>
             <tr> <td><label class="form-group" for="subject_account">수신 계좌 번호</label></td>
-                <td><input class="form-control" type="text" id="subject_account"></td> </tr>
+                <td><input class="form-control" type="text" name="object_account"></td> </tr>
             <tr> <td><label class="form-group" for="amount">거래 금액</label></td>
-                <td><input class="form-control" type="text" id="amount"></td> </tr>
+                <td><input class="form-control" type="text" name="amount"></td> </tr>
         </table>
-        <button class="btn btn-primary btn-block" type="submit">출금</button>
+        <button class="btn btn-primary btn-block" type="submit">송금</button>
     </form>
 </div>
 </body>

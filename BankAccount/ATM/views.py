@@ -162,14 +162,37 @@ def error_page(request):
 
 @csrf_exempt
 def send_money_page(request):
-    return HttpResponse(render_to_string('send_money.html'))
+    dict1 = {}
+    acc_num = request.session['acc_info']
+    dict1['acc_number'] = acc_num
+    dict1['balance'] = Account.objects.values_list('balance', flat=True).get(account_number=acc_num)
+    return HttpResponse(render_to_string('send_money.html', dict1))
 
 
 @csrf_exempt
 def send_money_result_page(request):
+    global acc
+    dict1 = {'commission': 0}
+    commission = 0
     if request.method == 'POST':
+        acc_num = request.session['acc_info']
+        dict1['acc_number'] = acc_num
+        obj_account = request.POST.get('object_account')
+        dict1['obj_account'] = obj_account
+        amount = int(request.POST.get('amount'))
+        dict1['amount'] = amount
 
-        return HttpResponse(render_to_string('send_money_result.html'))
+#        acc = Account.objects.get(account_number=request.session['acc_info'])
+        acc = Account.objects.get(account_number=obj_account)
+        acc.balance = int(acc.balance) + amount
+        acc.save()
+
+        acc = Account.objects.get(account_number=acc_num)
+        acc.balance = int(acc.balance) - amount - commission
+        acc.save()
+        dict1['balance'] = acc.balance
+
+        return HttpResponse(render_to_string('send_money_result.html', dict1))
 
 
 @csrf_exempt
