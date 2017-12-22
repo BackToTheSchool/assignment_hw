@@ -9,7 +9,7 @@ from ATM.models import Customer, Account
 
 cust = Customer()
 acc = Account()
-curr_usr = 'curr_usr'
+curr_usr = 'curr_usr'               # 현재 유저의 아이디
 
 
 @csrf_exempt
@@ -51,15 +51,15 @@ def login_page(request):
 
 
 @csrf_exempt
-def login_action_page(request):
+def login_action(request):
     dict1 = {}
     if request.method == 'POST':
         uid_input = request.POST.get('UserId')
         pwd_input = request.POST.get('Password')
         global curr_usr
         curr_usr = Customer(user_id=uid_input, password=pwd_input)      # 조건과 일치하는 데이터 추가
-        dict1['curr_usr'] = curr_usr                                   # 딕셔너리에 추가
-        request.session['curr_usr'] = curr_usr                  # 세션에 'cuur_usr'라는 변수에 값 추가
+        dict1['curr_usr'] = curr_usr                                    # 딕셔너리에 추가
+        request.session['curr_usr'] = curr_usr                          # 세션에 'cuur_usr'라는 변수에 값 추가
         return redirect("/select_action/")
 
 
@@ -137,3 +137,21 @@ def send_money_result_page(request):
 @csrf_exempt
 def logout_action(request):
     return redirect('/')
+
+
+@csrf_exempt
+def account_login_action(request):
+    if request.method == 'POST':
+        acc_number = int(request.POST.get('accNumber'))
+        acc_pwd = request.POST.get('accPassword')
+        # 입력값과 같은 값을 가지는 데이터를 Account 테이블에서 검색하여 쿼리셋을 변수에 저장
+        acc_info = Account.objects.filter(account_number=acc_number, password__exact=acc_pwd)
+        request.session['acc_info'] = acc_info                      # 세션에 계좌번호를 가진 쿼리셋을 저장
+
+        # 쿼리셋이 비어있지 않으면 해당 거래페이지로 리다이렉트 else 에러페이지
+        if request.session['acc_info'].__str__() != "<QuerySet []>":
+            redirect_url = '/' + request.POST.get('type') + '/'
+            return redirect(redirect_url)
+
+        else:
+            return redirect(error_page)

@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^main/', views.main_page),
     url(r'^$', views.main_page),
     url(r'^login/', views.login_page),
-    url(r'^login_action_page/', views.login_action_page),
+    url(r'^login_action/', views.login_action),
     url(r'^select_action/', views.select_action_page),
     url(r'^create_acc/', views.create_acc_page),
     url(r'^create_acc_action/', views.create_acc_action),
@@ -38,6 +38,7 @@ urlpatterns = [
     url(r'^error/', views.error_page),
     url(r'^send_money/', views.send_money_page),
     url(r'^send_money_result/', views.send_money_result_page),
-    url(r'^logout_action/', views.logout_action),
+    url(r'^logout/', views.logout_action),
+    url(r'^account_login/', views.account_login_action),
 
 ]
