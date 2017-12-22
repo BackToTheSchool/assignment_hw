@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.template.loader import render_to_string
 from django.views.decorators.csrf import csrf_exempt
-from django.db.models import Manager
 
 from ATM.models import Customer, Account
 
@@ -14,7 +13,7 @@ url_type = ''
 
 
 @csrf_exempt
-def signup_data(request):
+def signup_result_page(request):
     dict1 = {}
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -33,8 +32,7 @@ def signup_data(request):
         cust.date_of_birth = dob
         cust.save()  # 입력받은 값들을 저장 -> 이거 안하면 db에 저장 안 됨***
 
-    html = render_to_string('signup_result.html', dict1)  # 다음 페이지로 전달
-    return HttpResponse(html)
+    return HttpResponse(render_to_string('signup_result.html', dict1))
 
 
 @csrf_exempt
@@ -48,20 +46,27 @@ def main_page(request):
 
 @csrf_exempt
 def login_page(request):
-    return HttpResponse(render_to_string('login.html'))
+    if 'curr_usr' in request.session:
+        Customer.objects.get(user_id=curr_usr)  # 조건과 일치하는 데이터 SELECT
+        return redirect(select_action_page)
+    else:
+        return HttpResponse(render_to_string('login.html'))
 
 
 @csrf_exempt
 def login_action(request):
-    dict1 = {}
     if request.method == 'POST':
-        uid_input = request.POST.get('UserId')
-        pwd_input = request.POST.get('Password')
-        global curr_usr
-        curr_usr = Customer(user_id=uid_input, password=pwd_input)  # 조건과 일치하는 데이터 추가
-        dict1['curr_usr'] = curr_usr  # 딕셔너리에 추가
-        request.session['curr_usr'] = curr_usr  # 세션에 'cuur_usr'라는 변수에 값 추가
-        return redirect("/select_action/")
+        try:
+            uid_input = request.POST.get('UserId')
+            pwd_input = request.POST.get('Password')
+
+            global curr_usr
+            curr_usr = Customer.objects.values_list('user_id', flat=True).get(user_id=uid_input,
+                                                                              password=pwd_input)  # 조건과 일치하는 데이터 SELECT
+            request.session['curr_usr'] = curr_usr  # 세션에 'cuur_usr'라는 변수에 값 추가
+            return redirect(select_action_page)
+        except Customer.DoesNotExist:
+            return redirect(error_page)
 
 
 @csrf_exempt
@@ -124,13 +129,13 @@ def create_acc_action(request):
         acc.password = request.POST.get('accPassword')
         acc.user_id = request.session['curr_usr']
         acc.save()
-        return redirect('/create_acc_result/')
+        return redirect(create_acc_result_page)
 
 
 @csrf_exempt
 def dep_or_with_result_page(request):
     dict1 = {}
-    global acc      # 전역변수 Account 인스턴스 acc 수정가능하게 함
+    global acc  # 전역변수 Account 인스턴스 acc 수정가능하게 함
     if request.method == 'POST':
         # balance는 db에서 잔고값을 가젹오고 amount는 deposit/withdraw 페이지에서 받은 거래금액 저장
         balance = int(Account.objects.values_list('balance', flat=True).get(account_number=request.session['acc_info']))
@@ -145,8 +150,8 @@ def dep_or_with_result_page(request):
             balance = balance - amount - commission
             dict1['url_type'] = '출금'
 
-        acc.balance = balance       # select한 데이터의 balance 값에 이 메소드 내의 지역변수 balance를 UPDATE 한다
-        acc.save()                  # UPDATE한 값을 저장한다
+        acc.balance = balance  # select한 데이터의 balance 값에 이 메소드 내의 지역변수 balance를 UPDATE 한다
+        acc.save()  # UPDATE한 값을 저장한다
 
         dict1['acc_number'] = request.session['acc_info']
         dict1['amount'] = amount
@@ -182,7 +187,7 @@ def send_money_result_page(request):
         amount = int(request.POST.get('amount'))
         dict1['amount'] = amount
 
-#        acc = Account.objects.get(account_number=request.session['acc_info'])
+        #        acc = Account.objects.get(account_number=request.session['acc_info'])
         acc = Account.objects.get(account_number=obj_account)
         acc.balance = int(acc.balance) + amount
         acc.save()
@@ -197,7 +202,10 @@ def send_money_result_page(request):
 
 @csrf_exempt
 def logout_action(request):
-    return redirect('/')
+    global cust
+    request.session.flush()
+    cust = ""
+    return redirect(main_page)
 
 
 @csrf_exempt
@@ -216,5 +224,5 @@ def account_login_action(request):
         else:
             global url_type
             url_type = request.POST.get('type')
-            redirect_url = '/' + request.POST.get('type') + '/'
+            redirect_url = request.POST.get('type') + '_page'
             return redirect(redirect_url)
