@@ -18,12 +18,12 @@
     <br><h1>{{ dep_or_with }}</h1><br>
     <form method="POST" action="/dep_or_with_result/">
     <table class="table table-lined">
-        <tr> <td>계좌 번호</td> <td>1001</td> </tr>
-        <tr> <td>잔고</td> <td>\10,000</td> </tr>
-        <tr> <td>거래 금액</td> <td><input class="form-control col-sm-2" name="amount"></td> </tr>
+        <tr> <td>계좌 번호</td> <td>{{ acc_number }}</td> </tr>
+        <tr> <td>잔고</td> <td>￦{{ balance }}</td> </tr>
+        <tr> <td>거래 금액</td> <td><input class="form-control col-sm-2" id="amount" name="amount"></td> </tr>
     </table>
-        <input type="hidden" name="type" value="deposit">
-        <button class="btn btn-primary btn-block" type="submit">입/출금</button>
+        <input type="hidden" name="type" id="type" value="{{ url_type }}">
+        <button class="btn btn-primary btn-block" type="submit">{{ dep_or_with }}</button>
     </form>
 </div>
 </body>
