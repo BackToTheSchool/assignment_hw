@@ -59,7 +59,7 @@ def login_action_page(request):
         global curr_usr
         curr_usr = Customer(user_id=uid_input, password=pwd_input)      # 조건과 일치하는 데이터 추가
         dict1['curr_usr'] = curr_usr                                   # 딕셔너리에 추가
-        request.session['curr_usr'] = curr_usr
+        request.session['curr_usr'] = curr_usr                  # 세션에 'cuur_usr'라는 변수에 값 추가
         return redirect("/select_action/")
 
 
@@ -85,7 +85,13 @@ def withdraw_page(request):
 
 @csrf_exempt
 def select_account_page(request):
-    return HttpResponse(render_to_string('select_account.html'))
+    dict1 = {}
+    if request.method == 'POST':
+        trans_type = request.POST.get('type')
+        acc_list = Account.objects.filter(user_id=curr_usr)
+        dict1['url_type'] = trans_type
+        dict1['acc_list'] = acc_list
+        return HttpResponse(render_to_string('select_account.html', dict1))
 
 
 @csrf_exempt
@@ -126,3 +132,8 @@ def send_money_page(request):
 @csrf_exempt
 def send_money_result_page(request):
     return HttpResponse(render_to_string('send_money_result.html'))
+
+
+@csrf_exempt
+def logout_action(request):
+    return redirect('/')

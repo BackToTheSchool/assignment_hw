@@ -18,12 +18,7 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
@@ -34,83 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ATM/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="85" column="12" lean-forward="true" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dep_or_with.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/dep_or_with.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="select_action.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/select_action.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="select_account.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/select_account.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="24" column="56" lean-forward="false" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BankAccount/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="32" column="37" lean-forward="false" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_acc.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/create_acc.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="16" column="50" lean-forward="false" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="14" column="54" lean-forward="false" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_acc_result.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/create_acc_result.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+            <state relative-caret-position="168">
+              <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -119,18 +42,88 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ATM/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+            <state relative-caret-position="480">
+              <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BankAccount/settings.py">
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="48" column="28" lean-forward="false" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+            <state relative-caret-position="114">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="select_account.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/select_account.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="select_action.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/select_action.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="816">
+              <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="send_money.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/send_money.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="send_money_result.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/send_money_result.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/signup.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup_result.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/signup_result.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -158,9 +151,7 @@
       <find>database</find>
       <find>time</find>
       <find>install</find>
-      <find>static</find>
       <find>main</find>
-      <find>select</find>
       <find>signup_result</find>
       <find>login</find>
       <find>installed</find>
@@ -170,8 +161,11 @@
       <find>wsgi_run_once</find>
       <find>sessions_cooi</find>
       <find>sessions</find>
-      <find>acc</find>
       <find>dep</find>
+      <find>select</find>
+      <find>acc</find>
+      <find>static</find>
+      <find>select_account</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -199,31 +193,31 @@
         <option value="$PROJECT_DIR$/ATM/__init__.py" />
         <option value="$PROJECT_DIR$/templates/Style.css" />
         <option value="$PROJECT_DIR$/templates/style.css" />
-        <option value="$PROJECT_DIR$/templates/error_page.html" />
         <option value="$PROJECT_DIR$/ATM/apps.py" />
         <option value="$PROJECT_DIR$/BankAccount/wsgi.py" />
         <option value="$PROJECT_DIR$/static/style.css" />
-        <option value="$PROJECT_DIR$/templates/dep_or_with_result.html" />
-        <option value="$PROJECT_DIR$/templates/send_money.html" />
-        <option value="$PROJECT_DIR$/templates/send_money_result.html" />
-        <option value="$PROJECT_DIR$/templates/check_account.html" />
-        <option value="$PROJECT_DIR$/templates/main.html" />
         <option value="$PROJECT_DIR$/ATM/admin.py" />
-        <option value="$PROJECT_DIR$/templates/signup_result.html" />
         <option value="$PROJECT_DIR$/manage.py" />
-        <option value="$PROJECT_DIR$/templates/signup.html" />
         <option value="$PROJECT_DIR$/ATM/migrations/test.py" />
         <option value="$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/django/conf/global_settings.py" />
-        <option value="$PROJECT_DIR$/BankAccount/settings.py" />
-        <option value="$PROJECT_DIR$/templates/create_acc_result.html" />
-        <option value="$PROJECT_DIR$/templates/login.html" />
-        <option value="$PROJECT_DIR$/templates/create_acc.html" />
         <option value="$PROJECT_DIR$/ATM/models.py" />
-        <option value="$PROJECT_DIR$/templates/dep_or_with.html" />
         <option value="$PROJECT_DIR$/BankAccount/urls.py" />
-        <option value="$PROJECT_DIR$/ATM/views.py" />
+        <option value="$PROJECT_DIR$/BankAccount/settings.py" />
+        <option value="$PROJECT_DIR$/templates/check_account.html" />
+        <option value="$PROJECT_DIR$/templates/create_acc.html" />
+        <option value="$PROJECT_DIR$/templates/create_acc_result.html" />
+        <option value="$PROJECT_DIR$/templates/dep_or_with.html" />
+        <option value="$PROJECT_DIR$/templates/dep_or_with_result.html" />
+        <option value="$PROJECT_DIR$/templates/error_page.html" />
+        <option value="$PROJECT_DIR$/templates/login.html" />
+        <option value="$PROJECT_DIR$/templates/main.html" />
+        <option value="$PROJECT_DIR$/templates/send_money.html" />
+        <option value="$PROJECT_DIR$/templates/send_money_result.html" />
+        <option value="$PROJECT_DIR$/templates/signup.html" />
+        <option value="$PROJECT_DIR$/templates/signup_result.html" />
         <option value="$PROJECT_DIR$/templates/select_action.html" />
         <option value="$PROJECT_DIR$/templates/select_account.html" />
+        <option value="$PROJECT_DIR$/ATM/views.py" />
       </list>
     </option>
   </component>
@@ -238,7 +232,7 @@
       <scroll-view-position x="0" y="0" />
     </layout>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="952" />
     <option name="width" value="976" />
     <option name="height" value="1038" />
@@ -295,11 +289,6 @@
               <item name="BankAccount" type="462c0819:PsiDirectoryNode" />
               <item name="BankAccount" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="BankAccount" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BankAccount" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -312,19 +301,21 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../171108_Python" />
-    <property name="SearchEverywhereHistoryKey" value="select&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/select_account.html&#10;sele&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/select_action.html&#10;dep&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/dep_or_with.html&#10;urls&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/BankAccount/urls.py&#10;with&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/dep_or_with.html&#10;models&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/ATM/models.py&#10;create_acc&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/create_acc_result.html&#10;creat&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/create_acc.html&#10;model&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/ATM/models.py&#10;login&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/login.html&#10;create&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/create_acc_result.html&#10;view&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/ATM/views.py&#10;se&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/BankAccount/settings.py&#10;settings&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/BankAccount/settings.py&#10;wsgire&#9;null&#9;null&#10;admin&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/ATM/admin.py&#10;wsgi&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/BankAccount/wsgi.py&#10;wsgo&#9;null&#9;null&#10;session_engine&#9;null&#9;null&#10;manage&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/manage.py&#10;setting&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/BankAccount/settings.py&#10;views&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/ATM/views.py&#10;surls&#9;null&#9;null&#10;sign&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/signup_result.html&#10;vi&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/ATM/views.py&#10;vies&#9;null&#9;null&#10;database&#9;null&#9;null&#10;ogin&#9;FILE&#9;file://D:/gits/BankAccount/templates/login.html&#10;rls&#9;FILE&#9;file://D:/gits/BankAccount/BankAccount/urls.py&#10;LOGIN&#9;FILE&#9;file://D:/gits/BankAccount/templates/login.html&#10;signin&#9;FILE&#9;file://D:/Python36-32/Lib/site-packages/django/core/signing.py&#10;signup&#9;FILE&#9;file://D:/gits/BankAccount/templates/signup_result.html&#10;vie&#9;null&#9;null&#10;odels&#9;FILE&#9;file://D:/gits/BankAccount/ATM/models.py&#10;main&#9;FILE&#9;file://D:/gits/BankAccount/templates/main.html&#10;result&#9;FILE&#9;file://D:/gits/BankAccount/templates/signup_result.html&#10;saying&#9;null&#9;null&#10;setting.&#9;FILE&#9;file://D:/gits/BankAccount/BankAccount/settings.py&#10;check&#9;FILE&#9;file://D:/gits/BankAccount/templates/check_account.html&#10;select_acc&#9;FILE&#9;file://D:/gits/BankAccount/templates/select_account.html&#10;send&#9;FILE&#9;file://D:/gits/BankAccount/templates/send_money_result.html&#10;url&#9;FILE&#9;file://D:/gits/BankAccount/BankAccount/urls.py&#10;style&#9;FILE&#9;file://D:/gits/BankAccount/static/style.css&#10;signu&#9;FILE&#9;file://D:/gits/BankAccount/templates/signup.html&#10;sig&#9;FILE&#9;file://D:/gits/BankAccount/templates/signup_result.html&#10;account&#9;FILE&#9;file://D:/gits/BankAccount/templates/select_account.html&#10;maib&#9;null&#9;null&#10;Main&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/main.html&#10;mai&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/ATM/HTML/main.html" />
+    <property name="SearchEverywhereHistoryKey" value="sqlite&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/db.sqlite3&#10;models&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/ATM/models.py&#10;views&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/ATM/views.py&#10;urls&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/BankAccount/urls.py&#10;select&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/select_account.html&#10;settings&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/BankAccount/settings.py&#10;settins&#9;null&#9;null&#10;sele&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/select_action.html&#10;dep&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/dep_or_with.html&#10;with&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/dep_or_with.html&#10;create_acc&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/create_acc_result.html&#10;creat&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/create_acc.html&#10;model&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/ATM/models.py&#10;login&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/login.html&#10;create&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/create_acc_result.html&#10;view&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/ATM/views.py&#10;se&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/BankAccount/settings.py&#10;wsgire&#9;null&#9;null&#10;admin&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/ATM/admin.py&#10;wsgi&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/BankAccount/wsgi.py&#10;wsgo&#9;null&#9;null&#10;session_engine&#9;null&#9;null&#10;manage&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/manage.py&#10;setting&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/BankAccount/settings.py&#10;surls&#9;null&#9;null&#10;sign&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/signup_result.html&#10;vi&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/ATM/views.py&#10;vies&#9;null&#9;null&#10;database&#9;null&#9;null&#10;ogin&#9;FILE&#9;file://D:/gits/BankAccount/templates/login.html&#10;rls&#9;FILE&#9;file://D:/gits/BankAccount/BankAccount/urls.py&#10;LOGIN&#9;FILE&#9;file://D:/gits/BankAccount/templates/login.html&#10;signin&#9;FILE&#9;file://D:/Python36-32/Lib/site-packages/django/core/signing.py&#10;signup&#9;FILE&#9;file://D:/gits/BankAccount/templates/signup_result.html&#10;vie&#9;null&#9;null&#10;odels&#9;FILE&#9;file://D:/gits/BankAccount/ATM/models.py&#10;main&#9;FILE&#9;file://D:/gits/BankAccount/templates/main.html&#10;result&#9;FILE&#9;file://D:/gits/BankAccount/templates/signup_result.html&#10;saying&#9;null&#9;null&#10;setting.&#9;FILE&#9;file://D:/gits/BankAccount/BankAccount/settings.py&#10;check&#9;FILE&#9;file://D:/gits/BankAccount/templates/check_account.html&#10;select_acc&#9;FILE&#9;file://D:/gits/BankAccount/templates/select_account.html&#10;send&#9;FILE&#9;file://D:/gits/BankAccount/templates/send_money_result.html&#10;url&#9;FILE&#9;file://D:/gits/BankAccount/BankAccount/urls.py&#10;style&#9;FILE&#9;file://D:/gits/BankAccount/static/style.css&#10;signu&#9;FILE&#9;file://D:/gits/BankAccount/templates/signup.html&#10;sig&#9;FILE&#9;file://D:/gits/BankAccount/templates/signup_result.html&#10;account&#9;FILE&#9;file://D:/gits/BankAccount/templates/select_account.html&#10;maib&#9;null&#9;null&#10;Main&#9;FILE&#9;file://C:/Users/davki/OneDrive/문서/GitHub/assignment_hw/BankAccount/templates/main.html" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/BankAccount/urls.py" />
     <property name="last.edited.regexp" value="sign" />
     <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\davki\OneDrive\문서\GitHub\assignment_hw\BankAccount\static" />
+      <recent name="C:\Users\davki\OneDrive\문서\GitHub\assignment_hw\BankAccount" />
+      <recent name="C:\Users\davki\OneDrive\문서\GitHub\assignment_hw\BankAccount\templates" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\gits\BankAccount\ATM" />
       <recent name="D:\gits\BankAccount\static" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\davki\OneDrive\문서\GitHub\assignment_hw\BankAccount\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -502,16 +493,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906404" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938856" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944915" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31459567" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3195266" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.153125" sideWeight="0.48025277" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31049722" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.319337" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.114583336" sideWeight="0.48025277" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -565,14 +556,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/core/mail/backends/base.py" />
-    <entry file="file://$PROJECT_DIR$/templates/error_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BankAccount/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -603,20 +586,6 @@
     <entry file="file://$PROJECT_DIR$/static/PhireRedLogo.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/send_money_result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="21" column="62" lean-forward="false" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/send_money.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ATM/__init__.py">
@@ -653,20 +622,6 @@
       </provider>
     </entry>
     <entry file="file://D:/Python36-32/Lib/site-packages/django/db/models/query.py" />
-    <entry file="file://$PROJECT_DIR$/templates/check_account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dep_or_with_result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/django/db/models/query.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
@@ -693,27 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/signup_result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="21" column="6" lean-forward="false" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -769,38 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BankAccount/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="48" column="28" lean-forward="false" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="14" column="54" lean-forward="false" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/create_acc.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="16" column="50" lean-forward="false" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/create_acc_result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/django/db/models/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
@@ -809,52 +711,154 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ATM/models.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/django/db/migrations/serializer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+        <state relative-caret-position="198">
+          <caret line="251" column="6" lean-forward="false" selection-start-line="251" selection-start-column="6" selection-end-line="251" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BankAccount/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="125" column="34" lean-forward="false" selection-start-line="125" selection-start-column="34" selection-end-line="125" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/check_account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/create_acc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="10" column="50" lean-forward="false" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/create_acc_result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/dep_or_with.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        <state relative-caret-position="86">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dep_or_with_result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/error_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/send_money.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/send_money_result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/signup_result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BankAccount/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="32" column="37" lean-forward="false" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+        <state relative-caret-position="415">
+          <caret line="30" column="46" lean-forward="false" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ATM/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="85" column="12" lean-forward="true" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/select_action.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+        <state relative-caret-position="816">
+          <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ATM/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/select_account.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="24" column="56" lean-forward="false" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+        <state relative-caret-position="312">
+          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ATM/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding />
         </state>
       </provider>

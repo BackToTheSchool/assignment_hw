@@ -8,16 +8,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../static/style.css">
+    <link rel="icon" href="../static/favicon.ico">
 </head>
 <body>
     <div class="container">
         <br><h1>무엇을 하시겠습니까?</h1><br>
         <a href="/create_acc/" class="list-group-item list-group-item-action">계좌 만들기</a>
-        <a href="/select_account/" class="list-group-item list-group-item-action">입금</a>
-        <a href="/select_account/" class="list-group-item list-group-item-action">출금</a>
-        <a href="/select_account/" class="list-group-item list-group-item-action">송금</a>
-        <a href="/select_account/" class="list-group-item list-group-item-action">계좌 조회</a>
-        <a href="/" class="list-group-item list-group-item-action">로그아웃</a>
+        <form method="post" action="/select_account/">
+            <input type="hidden" name="type" value="deposit">
+            <button class="list-group-item list-group-item-action">입금</button>
+        </form>
+        <form method="post" action="/select_account/">
+            <input type="hidden" name="type" value="withdraw">
+            <button class="list-group-item list-group-item-action">출금</button>
+        </form>
+        <form method="post" action="/select_account/">
+            <input type="hidden" name="type" value="send_money">
+            <button class="list-group-item list-group-item-action">송금</button>
+        </form>
+        <form method="post" action="/select_account/">
+            <input type="hidden" name="type" value="check_account">
+            <button class="list-group-item list-group-item-action">계좌 조회</button>
+        </form>
+        <a href="/logout_action/" class="list-group-item list-group-item-action">로그아웃</a>
     </div>
 </body>
 </html>
