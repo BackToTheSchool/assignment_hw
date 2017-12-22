@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('balance', models.IntegerField()),
             ],
         ),
-        migrations.DeleteModel(
-            name='saying',
-        ),
+        #migrations.DeleteModel(
+        #    name='saying',
+        #),
     ]

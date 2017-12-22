@@ -22,4 +22,4 @@ fName = [john[1], tou[1], mic[1], jake[1], jaque[1], sally[1]]
 info.sort()
 
 for i in range(len(info)):
-	print(info[i])
+    print(info[i])

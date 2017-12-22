@@ -1,12 +1,14 @@
 from django.http import HttpResponse
 # Create your views here.
+from django.shortcuts import redirect
 from django.template.loader import render_to_string
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Manager
 
-from ATM.models import Customer
+from ATM.models import Customer, Account
 
 cust = Customer()
+acc = Account()
 curr_usr = 'curr_usr'
 
 
@@ -49,17 +51,21 @@ def login_page(request):
 
 
 @csrf_exempt
-def select_action_page(request):
+def login_action_page(request):
     dict1 = {}
     if request.method == 'POST':
         uid_input = request.POST.get('UserId')
         pwd_input = request.POST.get('Password')
         global curr_usr
         curr_usr = Customer(user_id=uid_input, password=pwd_input)      # 조건과 일치하는 데이터 추가
-        dict1['curr_usr'] = curr_usr                                    # 딕셔너리에 추가
-        return HttpResponse(render_to_string('select_action.html', dict1))
-    else:
-        return login_page
+        dict1['curr_usr'] = curr_usr                                   # 딕셔너리에 추가
+        request.session['curr_usr'] = curr_usr
+        return redirect("/select_action/")
+
+
+@csrf_exempt
+def select_action_page(request):
+    return HttpResponse(render_to_string('select_action.html'))
 
 
 @csrf_exempt
@@ -68,8 +74,13 @@ def create_acc_page(request):
 
 
 @csrf_exempt
-def dep_or_with_page(request):
-    return HttpResponse(render_to_string('dep_or_with.html'))
+def deposit_page(request):
+    return HttpResponse(render_to_string('dep_or_with.html', {'dep_or_with': '입금'}))
+
+
+@csrf_exempt
+def withdraw_page(request):
+    return HttpResponse(render_to_string('dep_or_with.html', {'dep_or_with': '출금'}))
 
 
 @csrf_exempt
@@ -84,7 +95,17 @@ def check_account_page(request):
 
 @csrf_exempt
 def create_acc_result_page(request):
-    return HttpResponse(render_to_string('create_acc_result.html'))
+    dict1 = {'acc_pwd': acc.password, 'acc_number': acc.account_number}
+    return HttpResponse(render_to_string('create_acc_result.html', dict1))
+
+
+@csrf_exempt
+def create_acc_action(request):
+    if request.method == 'POST':
+        acc.password = request.POST.get('accPassword')
+        acc.user_id = request.session['curr_usr']
+        acc.save()
+        return redirect('/create_acc_result/')
 
 
 @csrf_exempt
@@ -105,4 +126,3 @@ def send_money_page(request):
 @csrf_exempt
 def send_money_result_page(request):
     return HttpResponse(render_to_string('send_money_result.html'))
-

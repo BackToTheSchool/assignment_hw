@@ -6,13 +6,16 @@ from django.db import models
 
 
 class Account(models.Model):
-    account_number = models.CharField(max_length=10, primary_key=True)
+    account_number = models.AutoField(max_length=10, primary_key=True, editable=False)
     password = models.CharField(max_length=20)
     balance = models.IntegerField(default=0)
     user_id = models.CharField(max_length=30, editable=False)
     objects = models.Manager()
 
     def __str__(self):
+        return self.account_number.__str__()
+
+    def get_account_number(self):
         return self.account_number
 
 
