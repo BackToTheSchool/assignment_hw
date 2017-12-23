@@ -1,5 +1,4 @@
 from django.http import HttpResponse
-# Create your views here.
 from django.shortcuts import redirect
 from django.template.loader import render_to_string
 from django.views.decorators.csrf import csrf_exempt
@@ -8,7 +7,6 @@ from ATM.models import Customer, Account
 
 cust = Customer()
 acc = Account()
-curr_usr = 'curr_usr'  # 현재 유저의 아이디
 url_type = ''
 
 
@@ -47,7 +45,7 @@ def main_page(request):
 @csrf_exempt
 def login_page(request):
     if 'curr_usr' in request.session:
-        Customer.objects.get(user_id=curr_usr)  # 조건과 일치하는 데이터 SELECT
+        Customer.objects.get(user_id=request.session['curr_usr'])  # 조건과 일치하는 데이터 SELECT
         return redirect(select_action_page)
     else:
         return HttpResponse(render_to_string('login.html'))
@@ -60,12 +58,11 @@ def login_action(request):
             uid_input = request.POST.get('UserId')
             pwd_input = request.POST.get('Password')
 
-            global curr_usr
             curr_usr = Customer.objects.values_list('user_id', flat=True).get(user_id=uid_input,
                                                                               password=pwd_input)  # 조건과 일치하는 데이터 SELECT
             request.session['curr_usr'] = curr_usr  # 세션에 'cuur_usr'라는 변수에 값 추가
             return redirect(select_action_page)
-        except Customer.DoesNotExist:
+        except Customer.DoesNotExist as e:
             return redirect(error_page)
 
 
@@ -102,7 +99,7 @@ def select_account_page(request):
     dict1 = {}
     if request.method == 'POST':
         trans_type = request.POST.get('type')
-        acc_list = Account.objects.filter(user_id=curr_usr)
+        acc_list = Account.objects.filter(user_id=request.session['curr_usr'])
         dict1['url_type'] = trans_type
         dict1['acc_list'] = acc_list
         return HttpResponse(render_to_string('select_account.html', dict1))
@@ -139,25 +136,35 @@ def dep_or_with_result_page(request):
     if request.method == 'POST':
         # balance는 db에서 잔고값을 가젹오고 amount는 deposit/withdraw 페이지에서 받은 거래금액 저장
         balance = int(Account.objects.values_list('balance', flat=True).get(account_number=request.session['acc_info']))
-        amount = int(request.POST.get('amount'))
-        commission = 0
-        # acc에 계좌번호가 세션에서 가져온 acc_info와 같은 쿼리셋을 저장(SELECT * WHERE acc_number=acc_info)
-        acc = Account.objects.get(account_number=request.session['acc_info'])
-        if url_type == 'deposit':
-            balance = balance + amount - commission
-            dict1['url_type'] = '입금'
+        try:        # 거래 금액이 정수로 들어오지 않았을 경우 예외처리
+            amount = int(request.POST.get('amount'))
+        except ValueError:
+            return redirect(error_page)
         else:
-            balance = balance - amount - commission
-            dict1['url_type'] = '출금'
+            commission = 0
+            if amount <= 0:  # 거래금액이 0 이하일 경우 예외처리
+                return redirect(error_page)
+            else:
+                # acc에 계좌번호가 세션에서 가져온 acc_info와 같은 쿼리셋을 저장(SELECT * WHERE acc_number=acc_info)
+                acc = Account.objects.get(account_number=request.session['acc_info'])
+                if url_type == 'deposit':
+                    balance = balance + amount - commission
+                    dict1['url_type'] = '입금'
+                else:
+                    if balance < amount + commission:  # 출금시 거래금액이 잔고보다 클 경우 예외처리
+                        return redirect(error_page)
+                    else:
+                        balance = balance - amount - commission
+                        dict1['url_type'] = '출금'
 
-        acc.balance = balance  # select한 데이터의 balance 값에 이 메소드 내의 지역변수 balance를 UPDATE 한다
-        acc.save()  # UPDATE한 값을 저장한다
+                        acc.balance = balance  # select한 데이터의 balance 값에 이 메소드 내의 지역변수 balance를 UPDATE 한다
+                        acc.save()  # UPDATE한 값을 저장한다
 
-        dict1['acc_number'] = request.session['acc_info']
-        dict1['amount'] = amount
-        dict1['balance'] = balance
-        dict1['commission'] = commission
-        return HttpResponse(render_to_string('dep_or_with_result.html', dict1))
+                        dict1['acc_number'] = request.session['acc_info']
+                        dict1['amount'] = amount
+                        dict1['balance'] = balance
+                        dict1['commission'] = commission
+                        return HttpResponse(render_to_string('dep_or_with_result.html', dict1))
 
 
 @csrf_exempt
@@ -179,25 +186,42 @@ def send_money_result_page(request):
     global acc
     dict1 = {'commission': 0}
     commission = 0
-    if request.method == 'POST':
-        acc_num = request.session['acc_info']
-        dict1['acc_number'] = acc_num
-        obj_account = request.POST.get('object_account')
-        dict1['obj_account'] = obj_account
-        amount = int(request.POST.get('amount'))
-        dict1['amount'] = amount
+    try:
+        Account.objects.get(account_number=request.POST.get('object_account'))
+    except Account.DoesNotExist:
+        return redirect(error_page)
+    except ValueError:
+        return redirect(error_page)
+    else:
+        if request.method == 'POST':
+            acc_num = request.session['acc_info']
+            dict1['acc_number'] = acc_num
+            obj_account = request.POST.get('object_account')
+            dict1['obj_account'] = obj_account
+            try:  # 거래 금액이 정수로 들어오지 않았을 경우 예외처리
+                amount = int(request.POST.get('amount'))
+            except ValueError:
+                return redirect(error_page)
+            else:
+                if amount <= 0:  # 거래 금액이 0 이하일 경우 예외처리
+                    return redirect(error_page)
+                else:
+                    dict1['amount'] = amount
 
-        #        acc = Account.objects.get(account_number=request.session['acc_info'])
-        acc = Account.objects.get(account_number=obj_account)
-        acc.balance = int(acc.balance) + amount
-        acc.save()
+                    acc = Account.objects.get(account_number=acc_num)
 
-        acc = Account.objects.get(account_number=acc_num)
-        acc.balance = int(acc.balance) - amount - commission
-        acc.save()
-        dict1['balance'] = acc.balance
+                    if int(acc.balance) < amount + commission:  # 거래 금액보다 잔고가 적을 경우 예외처리
+                        return redirect(error_page)
+                    else:
+                        acc.balance = int(acc.balance) - amount - commission
+                        acc.save()
+                        dict1['balance'] = acc.balance
 
-        return HttpResponse(render_to_string('send_money_result.html', dict1))
+                        acc = Account.objects.get(account_number=obj_account)
+                        acc.balance = int(acc.balance) + amount
+                        acc.save()
+
+                        return HttpResponse(render_to_string('send_money_result.html', dict1))
 
 
 @csrf_exempt
@@ -219,10 +243,17 @@ def account_login_action(request):
             acc_info = Account.objects.values_list('account_number', flat=True)
             acc_info = acc_info.get(account_number=acc_number, password=acc_pwd)
             request.session['acc_info'] = acc_info  # 세션에 계좌번호를 가진 값을 저장
-        except Account.DoesNotExist:  # queryset의 get 메소드 때문에 생기는 예외를 처리해줌
+        except Account.DoesNotExist as e:  # queryset의 get 메소드 때문에 생기는 예외를 처리해줌
             return redirect(error_page)
         else:
             global url_type
             url_type = request.POST.get('type')
-            redirect_url = request.POST.get('type') + '_page'
+            redirect_url = '/' + request.POST.get('type') + '/'
             return redirect(redirect_url)
+
+
+def error_number(error_type):
+    if error_type == 'DoesNotExist':
+        return '001'
+    else:
+        return '000'
