@@ -122,7 +122,9 @@ def create_acc_result_page(request):
 
 @csrf_exempt
 def create_acc_action(request):
+    global acc
     if request.method == 'POST':
+        acc = Account()
         acc.password = request.POST.get('accPassword')
         acc.user_id = request.session['curr_usr']
         acc.save()
@@ -157,14 +159,14 @@ def dep_or_with_result_page(request):
                         balance = balance - amount - commission
                         dict1['url_type'] = '출금'
 
-                        acc.balance = balance  # select한 데이터의 balance 값에 이 메소드 내의 지역변수 balance를 UPDATE 한다
-                        acc.save()  # UPDATE한 값을 저장한다
+                acc.balance = balance  # select한 데이터의 balance 값에 이 메소드 내의 지역변수 balance를 UPDATE 한다
+                acc.save()  # UPDATE한 값을 저장한다
 
-                        dict1['acc_number'] = request.session['acc_info']
-                        dict1['amount'] = amount
-                        dict1['balance'] = balance
-                        dict1['commission'] = commission
-                        return HttpResponse(render_to_string('dep_or_with_result.html', dict1))
+                dict1['acc_number'] = request.session['acc_info']
+                dict1['amount'] = amount
+                dict1['balance'] = balance
+                dict1['commission'] = commission
+                return HttpResponse(render_to_string('dep_or_with_result.html', dict1))
 
 
 @csrf_exempt
