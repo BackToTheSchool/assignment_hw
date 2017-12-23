@@ -24,13 +24,16 @@ def signup_result_page(request):
                  'date_of_birth': dob}
 
         # cust 객체의 멤버 변수들에게 입력받은 각각의 데이터들 할당
-        cust.name = name
-        cust.user_id = uid
-        cust.password = pwd
-        cust.date_of_birth = dob
-        cust.save()  # 입력받은 값들을 저장 -> 이거 안하면 db에 저장 안 됨***
-
-    return HttpResponse(render_to_string('signup_result.html', dict1))
+        try:
+            cust.name = name
+            cust.user_id = uid
+            cust.password = pwd
+            cust.date_of_birth = dob
+            cust.save()  # 입력받은 값들을 저장 -> 이거 안하면 db에 저장 안 됨***
+        except ValueError:
+            return redirect(error_page)
+        else:
+            return HttpResponse(render_to_string('signup_result.html', dict1))
 
 
 @csrf_exempt
