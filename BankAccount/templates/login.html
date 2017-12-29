@@ -1,13 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Log in</title>
+    <title>로그인</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <link rel="icon" href="../static/favicon.ico">
 </head>
 <body>
@@ -15,10 +17,10 @@
         <br><h1>로그인</h1><br>
         <form method="POST" action="/login_action/">
                 <label class="form-group" for="UserId">ID: </label>
-                <input type="text" class="form-control" id="UserId" name="UserId">
+                <input type="text" class="form-control" id="UserId" name="UserId" required autofocus>
             <br>
                 <label class="form-group" for="Password">Password: </label>
-                <input type="password" class="form-control" id="Password" name="Password">
+                <input type="password" class="form-control" id="Password" name="Password" required>
             <br>
             <button type="submit" class="btn btn-primary">로그인</button>
         </form>
