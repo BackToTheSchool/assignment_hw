@@ -95,19 +95,19 @@ def withdraw_page(request):
 def select_account_page(request):
     dict1 = {}
     if request.method == 'POST':
-        trans_type = request.POST.get('type')
-        acc_list = Account.objects.filter(user_id=request.session['curr_usr'])
-        dict1['url_type'] = trans_type
-        dict1['acc_list'] = acc_list
+        # acc_list에는 로그인한 아이디의 계좌번호들을 저장
+        dict1['acc_list']\
+            = Account.objects.filter(user_id=request.session['curr_usr'])
+        # dict1['balance'] = Account.objects.values_list('balance', flat=True).get(user_id=request.session['curr_usr'])
         return HttpResponse(render_to_string('select_account.html', dict1))
 
 
 @csrf_exempt
 def check_account_page(request):
     dict1 = {}
-    acc_num = request.session['acc_info']
-    dict1['acc_number'] = acc_num
-    dict1['balance'] = Account.objects.values_list('balance', flat=True).get(account_number=acc_num)
+    acc_list = Account.objects.filter(user_id=request.session['curr_usr'])
+    dict1['acc_list'] = acc_list
+    dict1['balance'] = Account.objects.filter(user_id=request.session['curr_usr'])
     return HttpResponse(render_to_string('check_account.html', dict1))
 
 

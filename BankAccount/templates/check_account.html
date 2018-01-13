@@ -16,8 +16,10 @@
 <div class="container">
         <br><h1>계좌 조회</h1><br>
         <table class="table table-striped">
-            <tr> <td>계좌번호</td> <td>{{ acc_number }}</td> </tr>
-            <tr> <td>잔고</td> <td>￦{{ balance }}</td> </tr>
+            <tr> <th>계좌번호</th> <th>잔고</th></tr>
+            {% for acc_number in acc_list %}
+                <tr> <td>{{ acc_number }}</td> <td>￦{{ acc_number.balance }}</td> </tr>
+            {% endfor %}
         </table>
 
         <a href="/select_action/" class="btn btn-primary btn-block">거래 선택으로</a>

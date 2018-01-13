@@ -22,3 +22,7 @@ def signup_result_api(name, uid, pwd, dob):
         return JsonResponse("error")
     else:
         return json.dumps(dict1)
+
+
+# @csrf_exempt
+# def check_account_api(acc_num):
