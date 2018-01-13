@@ -51,16 +51,15 @@ def login_page(request):
 @csrf_exempt
 def login_action(request):
     if request.method == 'POST':
-        try:
-            uid_input = request.POST.get('UserId')
-            pwd_input = request.POST.get('Password')
+        uid_input = request.POST.get('UserId')
+        pwd_input = request.POST.get('Password')
+        login_result = apis.login_action_api(uid_input, pwd_input)
 
-            curr_usr = Customer.objects.values_list('user_id', flat=True).get(user_id=uid_input,
-                                                                              password=pwd_input)  # 조건과 일치하는 데이터 SELECT
-            request.session['curr_usr'] = curr_usr  # 세션에 'cuur_usr'라는 변수에 값 추가
+        if not login_result:
+            redirect(error_page)
+        else:
+            request.session['curr_usr'] = login_result # 세션에 'cuur_usr'라는 변수에 값 추가
             return redirect(select_action_page)
-        except Customer.DoesNotExist as e:
-            return redirect(error_page)
 
 
 @csrf_exempt
