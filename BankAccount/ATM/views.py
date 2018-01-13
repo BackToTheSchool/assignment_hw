@@ -1,9 +1,11 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import redirect
 from django.template.loader import render_to_string
 from django.views.decorators.csrf import csrf_exempt
 
+from ATM.apis import signup_result_api
 from ATM.models import Customer, Account
+import json
 
 cust = Customer()
 acc = Account()
@@ -12,28 +14,20 @@ url_type = ''
 
 @csrf_exempt
 def signup_result_page(request):
-    dict1 = {}
     if request.method == 'POST':
-        name = request.POST.get('name')
-        uid = request.POST.get('user_id')
-        pwd = request.POST.get('password')
-        dob = request.POST.get('date_of_birth')
-        dict1 = {'name': name,  # 데이터를 딕셔너리에 대입
-                 'user_id': uid,
-                 'password': pwd,
-                 'date_of_birth': dob}
 
-        # cust 객체의 멤버 변수들에게 입력받은 각각의 데이터들 할당
         try:
-            cust.name = name
-            cust.user_id = uid
-            cust.password = pwd
-            cust.date_of_birth = dob
-            cust.save()  # 입력받은 값들을 저장 -> 이거 안하면 db에 저장 안 됨***
+            name = request.POST.get('name')
+            uid = request.POST.get('user_id')
+            pwd = request.POST.get('password')
+            dob = request.POST.get('date_of_birth')
+
+            # signup_result_api의 리턴 값이 json타입이니까 dict타입으로 캐스팅해서 출력
+            dict1 = json.loads(signup_result_api(name, uid, pwd, dob))
         except ValueError:
             return redirect(error_page)
         else:
-            return HttpResponse(render_to_string('signup_result.html', dict1))
+            return HttpResponse(render_to_string("signup_result.html", dict1))
 
 
 @csrf_exempt
@@ -262,3 +256,5 @@ def error_number(error_type):
         return '001'
     else:
         return '000'
+
+
