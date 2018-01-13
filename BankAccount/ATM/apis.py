@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-from ATM.models import Customer
+from ATM.models import Customer, Account
 
 import json
 
@@ -24,5 +24,11 @@ def signup_result_api(name, uid, pwd, dob):
         return json.dumps(dict1)
 
 
-# @csrf_exempt
-# def check_account_api(acc_num):
+@csrf_exempt
+def check_account_api(user_id):
+    dict1 = {}
+    acc_list = Account.objects.filter(user_id=user_id)
+    # 딕셔너리 dict1에 다 acc_num(key): balance(value) 형식으로 넣기
+    for i in acc_list:
+        dict1[i.__str__()] = i.balance
+    return json.dumps(dict1)

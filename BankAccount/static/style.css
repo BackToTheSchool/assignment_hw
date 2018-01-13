@@ -1,3 +1,7 @@
+body{
+    margin-bottom:70px;
+}
+
 .list-group-item-action:hover{
     background-color: royalblue;
     color: white;
@@ -17,3 +21,4 @@
     height: 70px;
     width: 70px;
 }
+

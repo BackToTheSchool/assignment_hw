@@ -3,7 +3,7 @@ from django.shortcuts import redirect
 from django.template.loader import render_to_string
 from django.views.decorators.csrf import csrf_exempt
 
-from ATM.apis import signup_result_api
+from ATM import apis
 from ATM.models import Customer, Account
 import json
 
@@ -23,7 +23,7 @@ def signup_result_page(request):
             dob = request.POST.get('date_of_birth')
 
             # signup_result_api의 리턴 값이 json타입이니까 dict타입으로 캐스팅해서 출력
-            dict1 = json.loads(signup_result_api(name, uid, pwd, dob))
+            dict1 = json.loads(apis.signup_result_api(name, uid, pwd, dob))
         except ValueError:
             return redirect(error_page)
         else:
@@ -95,20 +95,17 @@ def withdraw_page(request):
 def select_account_page(request):
     dict1 = {}
     if request.method == 'POST':
-        # acc_list에는 로그인한 아이디의 계좌번호들을 저장
-        dict1['acc_list']\
-            = Account.objects.filter(user_id=request.session['curr_usr'])
-        # dict1['balance'] = Account.objects.values_list('balance', flat=True).get(user_id=request.session['curr_usr'])
+        trans_type = request.POST.get('type')
+        acc_list = Account.objects.filter(user_id=request.session['curr_usr'])
+        dict1['url_type'] = trans_type
+        dict1['acc_list'] = acc_list
         return HttpResponse(render_to_string('select_account.html', dict1))
 
 
 @csrf_exempt
 def check_account_page(request):
-    dict1 = {}
-    acc_list = Account.objects.filter(user_id=request.session['curr_usr'])
-    dict1['acc_list'] = acc_list
-    dict1['balance'] = Account.objects.filter(user_id=request.session['curr_usr'])
-    return HttpResponse(render_to_string('check_account.html', dict1))
+    dict1 = json.loads(apis.check_account_api(request.session['curr_usr']))
+    return HttpResponse(render_to_string('check_account.html', {'d': dict1}))
 
 
 @csrf_exempt
